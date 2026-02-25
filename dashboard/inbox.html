@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>My Inbox – Boutique Wine Events</title>
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+    <style>
+        .inbox-item {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            padding: var(--space-md) var(--space-lg);
+            border-bottom: 1px solid var(--border-color);
+            transition: background var(--transition-fast);
+            cursor: pointer;
+        }
+
+        .inbox-item:last-child {
+            border-bottom: none;
+        }
+
+        .inbox-item:hover {
+            background: var(--bg-alt);
+        }
+
+        .inbox-item.unread {
+            border-left: 3px solid var(--color-gold);
+        }
+
+        .inbox-avatar {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-full);
+            background: var(--color-primary);
+            border: 2px solid var(--color-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            flex-shrink: 0;
+        }
+
+        .inbox-content {
+            flex: 1;
+        }
+
+        .inbox-sender {
+            font-weight: 700;
+            font-size: 0.92rem;
+            margin-bottom: 0.1rem;
+        }
+
+        .inbox-subject {
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.1rem;
+        }
+
+        .inbox-preview {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .inbox-meta {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: var(--space-sm);
+            flex-shrink: 0;
+        }
+
+        .inbox-time {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+        }
+
+        .unread-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--color-gold);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+        <div id="sidebar-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:99;"
+            onclick="document.getElementById('sidebar').classList.remove('open');this.style.display='none';"></div>
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+                    <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5" />
+                    <path d="M22 8C22 8 14 16 14 23a8 8 0 0016 0c0-7-8-15-8-15z" fill="#8B1A1A" stroke="#C9A84C"
+                        stroke-width="1" />
+                    <rect x="20.5" y="31" width="3" height="5" rx="1" fill="#C9A84C" />
+                    <rect x="17" y="36" width="10" height="1.5" rx="0.75" fill="#C9A84C" />
+                </svg>
+                <div>
+                    <div class="sidebar-logo-name">Boutique</div>
+                    <div class="sidebar-logo-sub">Wine Events</div>
+                </div>
+            </div>
+            <div class="sidebar-user">
+                <div class="sidebar-user-avatar">J</div>
+                <div>
+                    <div class="sidebar-user-name">James Doe</div>
+                    <div class="sidebar-user-role">Member since 2024</div>
+                </div>
+            </div>
+            <nav class="sidebar-nav">
+                <div class="sidebar-nav-section">Main</div>
+                <a href="dashboard.html"><span class="nav-icon">🏠</span> Dashboard</a>
+                <a href="inbox.html" class="active"><span class="nav-icon">📨</span> My Inbox<span
+                        class="nav-badge">3</span></a>
+                <a href="saved.html"><span class="nav-icon">🔖</span> Saved Events</a>
+                <a href="bookings.html"><span class="nav-icon">📅</span> Booking History</a>
+                <div class="sidebar-nav-section">Account</div>
+                <a href="tickets.html"><span class="nav-icon">🎟️</span> Tickets</a>
+                <a href="profile.html"><span class="nav-icon">👤</span> Profile</a>
+                <a href="settings.html"><span class="nav-icon">⚙️</span> Settings</a>
+            </nav>
+            <div class="sidebar-footer"><a href="../index.html">Logout</a></div>
+        </aside>
+        <div class="dashboard-main">
+            <div class="dashboard-topbar">
+                <div style="display:flex;align-items:center;gap:var(--space-md);">
+                    <button class="sidebar-toggle-btn" id="sidebar-toggle">☰</button>
+                    <span class="topbar-title">My Inbox</span>
+                </div>
+                <div class="topbar-actions">
+                    <button class="topbar-icon-btn">🔔</button>
+                    <button id="theme-toggle" class="topbar-icon-btn"><span class="theme-icon-moon">🌙</span><span
+                            class="theme-icon-sun">☀️</span></button>
+                    <a href="../pages/login.html" class="btn btn-outline btn-sm">Sign Out</a>
+                </div>
+            </div>
+            <div class="dashboard-content">
+                <div style="margin-bottom:var(--space-xl);" class="reveal">
+                    <h2 style="font-style:italic;">Inbox <span class="badge badge-gold"
+                            style="font-size:1rem;vertical-align:middle;">3 New</span></h2>
+                </div>
+                <div class="card reveal">
+                    <div class="inbox-item unread">
+                        <div class="inbox-avatar">🍷</div>
+                        <div class="inbox-content">
+                            <div class="inbox-sender">Boutique Wine Events Team</div>
+                            <div class="inbox-subject">Your booking is confirmed – Napa Valley Reserve Tasting</div>
+                            <div class="inbox-preview">We're delighted to confirm your reservation for 1 guest on March
+                                15, 2026...</div>
+                        </div>
+                        <div class="inbox-meta"><span class="inbox-time">2h ago</span>
+                            <div class="unread-dot"></div>
+                        </div>
+                    </div>
+                    <div class="inbox-item unread">
+                        <div class="inbox-avatar">🥂</div>
+                        <div class="inbox-content">
+                            <div class="inbox-sender">Elena Marchetti</div>
+                            <div class="inbox-subject">Exclusive: Early access to April's Champagne Masterclass</div>
+                            <div class="inbox-preview">As a valued member, you have 48-hour exclusive access before
+                                tickets go public...</div>
+                        </div>
+                        <div class="inbox-meta"><span class="inbox-time">Yesterday</span>
+                            <div class="unread-dot"></div>
+                        </div>
+                    </div>
+                    <div class="inbox-item unread">
+                        <div class="inbox-avatar">✉️</div>
+                        <div class="inbox-content">
+                            <div class="inbox-sender">Boutique Wine Events</div>
+                            <div class="inbox-subject">March Newsletter: Top 5 Wines of the Season</div>
+                            <div class="inbox-preview">From Burgundy to Barossa – our sommeliers pick their favourite
+                                bottles this spring...</div>
+                        </div>
+                        <div class="inbox-meta"><span class="inbox-time">Mar 1</span>
+                            <div class="unread-dot"></div>
+                        </div>
+                    </div>
+                    <div class="inbox-item">
+                        <div class="inbox-avatar">📋</div>
+                        <div class="inbox-content">
+                            <div class="inbox-sender">Boutique Wine Events</div>
+                            <div class="inbox-subject">Invoice – Champagne &amp; Oyster High Tea (Jan 20)</div>
+                            <div class="inbox-preview">Please find attached your invoice for 1 ticket to the Champagne
+                                &amp; Oyster High Tea...</div>
+                        </div>
+                        <div class="inbox-meta"><span class="inbox-time">Jan 21</span></div>
+                    </div>
+                    <div class="inbox-item">
+                        <div class="inbox-avatar">⭐</div>
+                        <div class="inbox-content">
+                            <div class="inbox-sender">James Laurent</div>
+                            <div class="inbox-subject">Thanks for joining us – Tuscan Wine Dinner</div>
+                            <div class="inbox-preview">It was an absolute pleasure hosting you at the Tuscan Wine
+                                Dinner. We hope the Brunello was to your taste...</div>
+                        </div>
+                        <div class="inbox-meta"><span class="inbox-time">Dec 13</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>document.getElementById('sidebar-toggle')?.addEventListener('click', () => { const s = document.getElementById('sidebar'), o = document.getElementById('sidebar-overlay'); s.classList.toggle('open'); o.style.display = s.classList.contains('open') ? 'block' : 'none'; });</script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+
+</html>

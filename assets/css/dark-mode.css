@@ -1,0 +1,128 @@
+/* ===================== DARK MODE OVERRIDES ===================== */
+/* Applied via .light-mode class toggle on <html> element */
+/* Default is already dark; light-mode class switches to cream/warm tones */
+
+/* Light Mode Navbar — always show background so links are readable */
+.light-mode .navbar {
+    background: var(--bg);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+}
+
+.light-mode .navbar.scrolled {
+    background: var(--bg);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* Light Mode — Stronger text contrast override */
+.light-mode {
+    --text-secondary: #3B2010;
+    --text-muted: #5A3520;
+}
+
+/* Light Mode Nav Links */
+.light-mode .navbar-nav a {
+    color: var(--text-primary);
+}
+
+.light-mode .navbar-nav a:hover,
+.light-mode .navbar-nav a.active {
+    color: var(--color-primary);
+}
+
+.light-mode .navbar-logo .logo-sub {
+    color: var(--text-secondary);
+}
+
+/* Light Mode Mobile Menu */
+.light-mode .mobile-menu {
+    background: var(--bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.light-mode .mobile-menu a {
+    color: var(--text-primary);
+}
+
+/* Light Mode Hamburger Lines */
+.light-mode .btn-hamburger span {
+    background: var(--text-primary);
+}
+
+/* Light Mode Cards */
+.light-mode .event-card,
+.light-mode .why-us-card,
+.light-mode .card {
+    background: var(--bg-surface);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Light Mode Newsletter */
+.light-mode .newsletter-section {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #6E1515 100%);
+}
+
+.light-mode .newsletter-form input {
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+}
+
+.light-mode .newsletter-form input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Light Mode Footer */
+.light-mode .footer {
+    background: var(--bg-alt);
+}
+
+/* Light Mode Form Controls */
+.light-mode .form-control {
+    background: var(--bg-surface);
+    color: var(--text-primary);
+}
+
+/* Light Mode Page Banner */
+.light-mode .page-banner-overlay {
+    background: linear-gradient(to top, rgba(26, 10, 10, 0.88) 0%, rgba(26, 10, 10, 0.6) 60%, rgba(0, 0, 0, 0.2) 100%);
+}
+
+.light-mode .page-banner-content h1,
+.light-mode .page-banner-content .breadcrumb,
+.light-mode .page-banner-content .breadcrumb a {
+    color: #fff !important;
+}
+
+/* Light Mode General Text Contrast Boost */
+.light-mode p {
+    color: #3B2010;
+}
+
+.light-mode .section-subtitle,
+.light-mode .text-secondary,
+.light-mode .footer-brand p {
+    color: #4A2E18;
+}
+
+.light-mode .event-card-meta,
+.light-mode .text-muted,
+.light-mode .footer-bottom {
+    color: #5A3520;
+}
+
+/* Theme Toggle Icon */
+.theme-icon-moon {
+    display: block;
+}
+
+.theme-icon-sun {
+    display: none;
+}
+
+.light-mode .theme-icon-moon {
+    display: none;
+}
+
+.light-mode .theme-icon-sun {
+    display: block;
+}

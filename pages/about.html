@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About – Boutique Wine Events</title>
+    <meta name="description"
+        content="Learn about Boutique Wine Events – our story, our team, and our passion for curated wine experiences." />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+    <style>
+        .about-banner-bg {
+            background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1400&q=75');
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+
+        .story-img {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            aspect-ratio: 4/3;
+        }
+
+        .story-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .team-card {
+            text-align: center;
+            padding: var(--space-xl);
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            transition: all var(--transition-base);
+        }
+
+        .team-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--color-gold);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .team-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: var(--radius-full);
+            margin: 0 auto var(--space-lg);
+            border: 3px solid var(--color-gold);
+            overflow: hidden;
+        }
+
+        .team-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .team-role {
+            font-size: 0.78rem;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: var(--space-sm);
+        }
+
+        .team-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        @media(max-width:900px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media(max-width:600px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:480px) {
+            .team-card {
+                padding: var(--space-lg);
+            }
+
+            .team-avatar {
+                width: 70px;
+                height: 70px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="container">
+                <a href="../index.html" class="navbar-logo">
+                    <svg class="logo-icon" viewBox="0 0 44 44" fill="none">
+                        <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5" />
+                        <path d="M22 8C22 8 14 16 14 23a8 8 0 0016 0c0-7-8-15-8-15z" fill="#8B1A1A" stroke="#C9A84C"
+                            stroke-width="1" />
+                        <rect x="20.5" y="31" width="3" height="5" rx="1" fill="#C9A84C" />
+                        <rect x="17" y="36" width="10" height="1.5" rx="0.75" fill="#C9A84C" />
+                    </svg>
+                    <div class="logo-text"><span class="logo-name">Boutique</span><span class="logo-sub">Wine
+                            Events</span></div>
+                </a>
+                <nav class="navbar-nav">
+                    <a href="../index.html">Home</a>
+                    <a href="../home2.html">Home 2</a>
+                    <a href="events.html">Events</a>
+                    <a href="about.html" class="active">About</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div class="navbar-actions">
+                    <button id="dir-toggle" class="btn-theme-toggle" aria-label="Toggle RTL/LTR"
+                        title="Toggle RTL/LTR">🔄</button>
+                    <button id="theme-toggle" class="btn-theme-toggle"><span class="theme-icon-moon">🌙</span><span
+                            class="theme-icon-sun">☀️</span></button>
+                    <a href="login.html" class="btn btn-outline btn-sm">Get In</a>
+                    <a href="../dashboard/dashboard.html" class="btn btn-gold btn-sm">My Account</a>
+                    <a href="../dashboard/admin.html" class="btn btn-primary btn-sm">Admin</a>
+                    <button class="btn-hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false"
+                        aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </nav>
+        <nav class="mobile-menu" id="mobile-menu">
+            <a href="../index.html">Home</a>
+            <a href="../home2.html">Home 2</a>
+            <a href="events.html">Events</a>
+            <a href="about.html" class="active">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-menu-actions">
+                <a href="login.html" class="btn btn-outline btn-sm" style="flex:1;justify-content:center;">Get In</a>
+                <a href="../dashboard/dashboard.html" class="btn btn-gold btn-sm"
+                    style="flex:1;justify-content:center;">My Account</a>
+                <a href="../dashboard/admin.html" class="btn btn-primary btn-sm"
+                    style="flex:1;justify-content:center;">Admin</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="page-banner-bg about-banner-bg"></div>
+            <div class="page-banner-overlay"></div>
+            <div class="container">
+                <div class="page-banner-content">
+                    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span>About</div>
+                    <h1>Our Story</h1>
+                </div>
+            </div>
+        </section>
+
+        <!-- STORY -->
+        <section>
+            <div class="container">
+                <div class="story-grid">
+                    <div class="reveal">
+                        <div class="hero-eyebrow" style="margin-bottom:var(--space-lg);">🍷 Est. 2009</div>
+                        <h2 style="font-style:italic; margin-bottom:var(--space-lg);">Passion Poured Into Every Glass
+                        </h2>
+                        <p style="margin-bottom:var(--space-md);">Boutique Wine Events was born from a simple belief:
+                            that wine is best experienced as a shared journey. Founded in 2009 by master sommelier Elena
+                            Marchetti and her husband, vintner Carlo Marchetti, we have been crafting intimate,
+                            world-class wine events that educate, inspire, and delight.</p>
+                        <p style="margin-bottom:var(--space-xl);">Over 15 years, we've hosted more than 240 events
+                            across 38 wine regions — from sun-drenched Napa valleys to candlelit Parisian cellars. Every
+                            event reflects our core philosophy: that exceptional wine is a story waiting to be told.</p>
+                        <a href="events.html" class="btn btn-primary">Explore Our Events</a>
+                    </div>
+                    <div class="story-img reveal reveal-delay-1">
+                        <img src="../assets/images/high-end+whiskey+tastings.webp"
+                            alt="Elena and Carlo Marchetti in a vineyard" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TEAM -->
+        <section style="background:var(--bg-alt);">
+            <div class="container">
+                <h2 class="section-title reveal">Meet Our Sommeliers</h2>
+                <div class="team-grid">
+                    <div class="team-card reveal">
+                        <div class="team-avatar"><img
+                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=70"
+                                alt="Elena Marchetti" /></div>
+                        <div class="team-role">Founder · Master Sommelier</div>
+                        <h3>Elena Marchetti</h3>
+                        <p style="font-size:0.88rem;">MW certified with 22 years in the industry. Former head sommelier
+                            at three Michelin-starred restaurants.</p>
+                    </div>
+                    <div class="team-card reveal reveal-delay-1">
+                        <div class="team-avatar"><img
+                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=70"
+                                alt="James Laurent" /></div>
+                        <div class="team-role">Lead Sommelier</div>
+                        <h3>James Laurent</h3>
+                        <p style="font-size:0.88rem;">Specialist in New World wines and sustainable viticulture. James
+                            brings the terroir of Napa and Barossa to life.</p>
+                    </div>
+                    <div class="team-card reveal reveal-delay-2">
+                        <div class="team-avatar"><img
+                                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=70"
+                                alt="Sophie Deveraux" /></div>
+                        <div class="team-role">Champagne Specialist</div>
+                        <h3>Sophie Deveraux</h3>
+                        <p style="font-size:0.88rem;">Born in Épernay, Sophie curates our celebrated Champagne
+                            experiences and is a published author on sparkling wines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VALUES -->
+        <section>
+            <div class="container">
+                <div style="text-align:center;max-width:700px;margin:0 auto var(--space-3xl);" class="reveal">
+                    <h2 class="section-title">Values That Guide Us</h2>
+                    <p>More than just a business, we are a community of enthusiasts dedicated to the art of the vine.
+                    </p>
+                </div>
+                <div class="story-grid">
+                    <div class="reveal">
+                        <h3 style="font-style:italic;margin-bottom:var(--space-md);">Integrity & Authenticity</h3>
+                        <p style="margin-bottom:var(--space-lg);">We partner directly with family-owned vineyards and
+                            independent vintners to ensure every bottle we present has a traceable, honest heritage.</p>
+
+                        <h3 style="font-style:italic;margin-bottom:var(--space-md);">Lifelong Education</h3>
+                        <p style="margin-bottom:var(--space-lg);">Wine is a language. We believe in empowering our
+                            guests with knowledge, from understanding soil chemistry to the nuances of glass shapes.</p>
+
+                        <h3 style="font-style:italic;margin-bottom:var(--space-md);">Environmental Stewardship</h3>
+                        <p>We prioritise organic and biodynamic estates that treat the land with the respect it
+                            deserves, ensuring world-class wine for generations to come.</p>
+                    </div>
+                    <div class="story-img reveal reveal-delay-1">
+                        <img src="https://images.unsplash.com/photo-1543418219-44e30b057fc5?w=1000&q=80"
+                            alt="Vineyard and sunset" loading="lazy" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- AWARDS -->
+        <section
+            style="background:var(--bg-alt);border-top:1px solid var(--border-color);border-bottom:1px solid var(--border-color);">
+            <div class="container">
+                <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-2xl);text-align:center;">
+                    <div class="reveal">
+                        <div style="font-size:2.5rem;margin-bottom:var(--space-md);">🥇</div>
+                        <h4 style="margin-bottom:var(--space-xs);">Best Wine Experience</h4>
+                        <p style="font-size:0.82rem;color:var(--text-muted);">European Tourism Awards 2024</p>
+                    </div>
+                    <div class="reveal reveal-delay-1">
+                        <div style="font-size:2.5rem;margin-bottom:var(--space-md);">🏆</div>
+                        <h4 style="margin-bottom:var(--space-xs);">Sommelier's Choice</h4>
+                        <p style="font-size:0.82rem;color:var(--text-muted);">International Wine Gazette</p>
+                    </div>
+                    <div class="reveal reveal-delay-2">
+                        <div style="font-size:2.5rem;margin-bottom:var(--space-md);">⭐</div>
+                        <h4 style="margin-bottom:var(--space-xs);">5-Star Excellence</h4>
+                        <p style="font-size:0.82rem;color:var(--text-muted);">Luxury Life Magazine</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section style="padding:var(--space-4xl) 0;text-align:center;">
+            <div class="container reveal">
+                <h2 style="font-size:2.5rem;margin-bottom:var(--space-lg);">Ready to find your new favourite?</h2>
+                <p style="margin-bottom:var(--space-2xl);max-width:600px;margin-left:auto;margin-right:auto;">Join us
+                    for an evening of discovery, elegance, and exceptional company.</p>
+                <div style="display:flex;gap:var(--space-md);justify-content:center;">
+                    <a href="events.html" class="btn btn-gold">View Calendar</a>
+                    <a href="contact.html" class="btn btn-outline">Enquire Privately</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-wrap">
+                        <a href="../index.html">
+                            <svg width="36" height="36" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                                <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5" />
+                                <path d="M22 8C22 8 14 16 14 23a8 8 0 0016 0c0-7-8-15-8-15z" fill="#8B1A1A"
+                                    stroke="#C9A84C" />
+                                <rect x="20.5" y="31" width="3" height="5" rx="1" fill="#C9A84C" />
+                                <rect x="17" y="36" width="10" height="1.5" rx="0.75" fill="#C9A84C" />
+                            </svg>
+                            <div>
+                                <div class="logo-name"
+                                    style="font-family:var(--font-serif);font-size:1.1rem;color:var(--color-gold);font-weight:700;">
+                                    Boutique
+                                </div>
+                                <div class="logo-sub"
+                                    style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);">
+                                    Wine Events</div>
+                            </div>
+                        </a>
+                    </div>
+                    <p>Crafting extraordinary wine experiences for discerning palates since 2009. Every event is an
+                        invitation to
+                        explore, savour, and celebrate.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="events.html">Upcoming Events</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog &amp; News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login.html#register">Register</a></li>
+                        <li><a href="dashboard/dashboard.html">My Dashboard</a></li>
+                        <li><a href="dashboard/bookings.html">My Bookings</a></li>
+                        <li><a href="dashboard/admin.html">Admin Panel</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#">@BoutiqueWineEvents</a></li>
+                        <li><a href="#">Instagram Stories</a></li>
+                        <li><a href="#">YouTube Channel</a></li>
+                        <li><a href="#">Wine Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Boutique Wine Events. All rights reserved.</span>
+                <span>Privacy Policy · Terms of Service</span>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

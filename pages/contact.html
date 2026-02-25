@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – Boutique Wine Events</title>
+    <meta name="description" content="Get in touch with Boutique Wine Events. We'd love to hear from you." />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+    <style>
+        .contact-banner-bg {
+            background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1400&q=75');
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: var(--space-3xl);
+        }
+
+        .contact-info-card {
+            display: flex;
+            align-items: flex-start;
+            gap: var(--space-md);
+            padding: var(--space-lg);
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            margin-bottom: var(--space-md);
+            transition: all var(--transition-fast);
+        }
+
+        .contact-info-card:hover {
+            border-color: var(--color-gold);
+        }
+
+        .contact-info-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-full);
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .contact-info-card h4 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            margin-bottom: 0.25rem;
+        }
+
+        .contact-info-card p {
+            font-size: 0.92rem;
+            margin: 0;
+        }
+
+        .contact-form-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-xl);
+            padding: var(--space-2xl);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+
+        .map-wrap {
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            margin-top: var(--space-3xl);
+            height: 380px;
+            border: 1px solid var(--border-color);
+        }
+
+        .map-wrap iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        #contact-msg {
+            font-size: 0.9rem;
+            margin-top: var(--space-md);
+        }
+
+        @media(max-width:900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width:600px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="container">
+                <a href="../index.html" class="navbar-logo">
+                    <svg class="logo-icon" viewBox="0 0 44 44" fill="none">
+                        <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5" />
+                        <path d="M22 8C22 8 14 16 14 23a8 8 0 0016 0c0-7-8-15-8-15z" fill="#8B1A1A" stroke="#C9A84C"
+                            stroke-width="1" />
+                        <rect x="20.5" y="31" width="3" height="5" rx="1" fill="#C9A84C" />
+                        <rect x="17" y="36" width="10" height="1.5" rx="0.75" fill="#C9A84C" />
+                    </svg>
+                    <div class="logo-text"><span class="logo-name">Boutique</span><span class="logo-sub">Wine
+                            Events</span></div>
+                </a>
+                <nav class="navbar-nav">
+                    <a href="../index.html">Home</a>
+                    <a href="../home2.html">Home 2</a>
+                    <a href="events.html">Events</a>
+                    <a href="about.html">About</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="contact.html" class="active">Contact</a>
+                </nav>
+                <div class="navbar-actions">
+                    <button id="dir-toggle" class="btn-theme-toggle" aria-label="Toggle RTL/LTR"
+                        title="Toggle RTL/LTR">🔄</button>
+                    <button id="theme-toggle" class="btn-theme-toggle"><span class="theme-icon-moon">🌙</span><span
+                            class="theme-icon-sun">☀️</span></button>
+                    <a href="login.html" class="btn btn-outline btn-sm">Get In</a>
+                    <a href="../dashboard/dashboard.html" class="btn btn-gold btn-sm">My Account</a>
+                    <a href="../dashboard/admin.html" class="btn btn-primary btn-sm">Admin</a>
+                    <button class="btn-hamburger" id="hamburger" aria-label="Open menu"
+                        aria-expanded="false"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </nav>
+        <nav class="mobile-menu" id="mobile-menu">
+            <a href="../index.html">Home</a>
+            <a href="../home2.html">Home 2</a>
+            <a href="events.html">Events</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="blog.html">Blog</a>
+            <a href="contact.html" class="active">Contact</a>
+            <div class="mobile-menu-actions">
+                <a href="login.html" class="btn btn-outline btn-sm" style="flex:1;justify-content:center;">Get In</a>
+                <a href="../dashboard/dashboard.html" class="btn btn-gold btn-sm"
+                    style="flex:1;justify-content:center;">My Account</a>
+                <a href="../dashboard/admin.html" class="btn btn-primary btn-sm"
+                    style="flex:1;justify-content:center;">Admin</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="page-banner-bg contact-banner-bg"></div>
+            <div class="page-banner-overlay"></div>
+            <div class="container">
+                <div class="page-banner-content">
+                    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span>Contact</div>
+                    <h1>Get In Touch</h1>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <div class="contact-grid">
+                    <!-- Info -->
+                    <div class="reveal">
+                        <h2 style="font-style:italic;margin-bottom:var(--space-xl);">We'd Love to Hear From You</h2>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">📍</div>
+                            <div>
+                                <h4>Our Office</h4>
+                                <p>14 Château Mews, Kensington, London W8 4PL, United Kingdom</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">📞</div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+44 (0)20 7946 0323</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">✉️</div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>hello@boutiquewineevents.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="contact-info-icon">🕐</div>
+                            <div>
+                                <h4>Office Hours</h4>
+                                <p>Monday – Friday: 9am – 6pm<br />Saturday: 10am – 3pm</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Form -->
+                    <div class="contact-form-card reveal reveal-delay-1">
+                        <h3 style="font-style:italic;margin-bottom:var(--space-xl);">Send a Message</h3>
+                        <form id="contact-form" novalidate>
+                            <div class="form-row">
+                                <div class="form-group"><label for="cf-name">Full Name</label><input type="text"
+                                        id="cf-name" class="form-control" placeholder="Your name" required /></div>
+                                <div class="form-group"><label for="cf-email">Email Address</label><input type="email"
+                                        id="cf-email" class="form-control" placeholder="you@example.com" required />
+                                </div>
+                            </div>
+                            <div class="form-group"><label for="cf-subject">Subject</label><input type="text"
+                                    id="cf-subject" class="form-control" placeholder="How can we help?" /></div>
+                            <div class="form-group"><label for="cf-message">Message</label><textarea id="cf-message"
+                                    class="form-control" placeholder="Tell us more..." required></textarea></div>
+                            <button type="submit" class="btn btn-primary"
+                                style="width:100%;justify-content:center;">Send Message</button>
+                            <p id="contact-msg"></p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="map-wrap reveal">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.9060093073!2d-0.19222!3d51.50077!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760f8b3b86f81d%3A0x3b5893dbfe51e3f5!2sKensington%2C%20London!5e0!3m2!1sen!2suk!4v1700000000000"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Boutique Wine Events Office Location">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-wrap">
+                        <a href="../index.html">
+                            <svg width="36" height="36" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                                <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5" />
+                                <path d="M22 8C22 8 14 16 14 23a8 8 0 0016 0c0-7-8-15-8-15z" fill="#8B1A1A"
+                                    stroke="#C9A84C" />
+                                <rect x="20.5" y="31" width="3" height="5" rx="1" fill="#C9A84C" />
+                                <rect x="17" y="36" width="10" height="1.5" rx="0.75" fill="#C9A84C" />
+                            </svg>
+                            <div>
+                                <div class="logo-name"
+                                    style="font-family:var(--font-serif);font-size:1.1rem;color:var(--color-gold);font-weight:700;">
+                                    Boutique
+                                </div>
+                                <div class="logo-sub"
+                                    style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);">
+                                    Wine Events</div>
+                            </div>
+                        </a>
+                    </div>
+                    <p>Crafting extraordinary wine experiences for discerning palates since 2009. Every event is an
+                        invitation to
+                        explore, savour, and celebrate.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="events.html">Upcoming Events</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog &amp; News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login.html#register">Register</a></li>
+                        <li><a href="dashboard/dashboard.html">My Dashboard</a></li>
+                        <li><a href="dashboard/bookings.html">My Bookings</a></li>
+                        <li><a href="dashboard/admin.html">Admin Panel</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#">@BoutiqueWineEvents</a></li>
+                        <li><a href="#">Instagram Stories</a></li>
+                        <li><a href="#">YouTube Channel</a></li>
+                        <li><a href="#">Wine Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Boutique Wine Events. All rights reserved.</span>
+                <span>Privacy Policy · Terms of Service</span>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

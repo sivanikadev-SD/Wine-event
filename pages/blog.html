@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root" dir="ltr">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog – Boutique Wine Events</title>
+    <meta name="description"
+        content="Wine news, tasting notes, sommelier tips, and event stories from Boutique Wine Events." />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+    <style>
+        .blog-banner-bg {
+            background-image: url('https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=1400&q=75');
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .blog-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            transition: all var(--transition-base);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--border-color-hover);
+        }
+
+        .blog-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform var(--transition-slow);
+        }
+
+        .blog-card:hover .blog-card-img {
+            transform: scale(1.04);
+        }
+
+        .blog-card-img-wrap {
+            overflow: hidden;
+        }
+
+        .blog-card-body {
+            padding: var(--space-lg);
+        }
+
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            gap: var(--space-md);
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-bottom: var(--space-sm);
+        }
+
+        .blog-category {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--color-gold);
+            background: rgba(201, 168, 76, 0.1);
+            padding: 0.2rem 0.6rem;
+            border-radius: var(--radius-full);
+        }
+
+        .blog-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: var(--space-sm);
+        }
+
+        .blog-card p {
+            font-size: 0.88rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            margin-bottom: var(--space-md);
+        }
+
+        .blog-read-more {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-gold);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: gap var(--transition-fast);
+        }
+
+        .blog-card:hover .blog-read-more {
+            gap: 8px;
+        }
+
+        @media(max-width:1024px) {
+            .blog-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width:640px) {
+            .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar" id="navbar">
+            <div class="container">
+                <a href="../index.html" class="navbar-logo">
+                    <svg class="logo-icon" viewBox="0 0 44 44" fill="none">
+                        <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5" />
+                        <path d="M22 8C22 8 14 16 14 23a8 8 0 0016 0c0-7-8-15-8-15z" fill="#8B1A1A" stroke="#C9A84C"
+                            stroke-width="1" />
+                        <rect x="20.5" y="31" width="3" height="5" rx="1" fill="#C9A84C" />
+                        <rect x="17" y="36" width="10" height="1.5" rx="0.75" fill="#C9A84C" />
+                    </svg>
+                    <div class="logo-text"><span class="logo-name">Boutique</span><span class="logo-sub">Wine
+                            Events</span></div>
+                </a>
+                <nav class="navbar-nav">
+                    <a href="../index.html">Home</a>
+                    <a href="../home2.html">Home 2</a>
+                    <a href="events.html">Events</a>
+                    <a href="about.html">About</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="blog.html" class="active">Blog</a>
+                    <a href="contact.html">Contact</a>
+                </nav>
+                <div class="navbar-actions">
+                    <button id="dir-toggle" class="btn-theme-toggle" aria-label="Toggle RTL/LTR"
+                        title="Toggle RTL/LTR">🔄</button>
+                    <button id="theme-toggle" class="btn-theme-toggle"><span class="theme-icon-moon">🌙</span><span
+                            class="theme-icon-sun">☀️</span></button>
+                    <a href="login.html" class="btn btn-outline btn-sm">Get In</a>
+                    <a href="../dashboard/dashboard.html" class="btn btn-gold btn-sm">My Account</a>
+                    <a href="../dashboard/admin.html" class="btn btn-primary btn-sm">Admin</a>
+                    <button class="btn-hamburger" id="hamburger" aria-label="Open menu"
+                        aria-expanded="false"><span></span><span></span><span></span></button>
+                </div>
+            </div>
+        </nav>
+        <nav class="mobile-menu" id="mobile-menu">
+            <a href="../index.html">Home</a>
+            <a href="../home2.html">Home 2</a>
+            <a href="events.html">Events</a>
+            <a href="about.html">About</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="blog.html" class="active">Blog</a>
+            <a href="contact.html">Contact</a>
+            <div class="mobile-menu-actions">
+                <a href="login.html" class="btn btn-outline btn-sm" style="flex:1;justify-content:center;">Get In</a>
+                <a href="../dashboard/dashboard.html" class="btn btn-gold btn-sm"
+                    style="flex:1;justify-content:center;">My Account</a>
+                <a href="../dashboard/admin.html" class="btn btn-primary btn-sm"
+                    style="flex:1;justify-content:center;">Admin</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="page-banner">
+            <div class="page-banner-bg blog-banner-bg"></div>
+            <div class="page-banner-overlay"></div>
+            <div class="container">
+                <div class="page-banner-content">
+                    <div class="breadcrumb"><a href="../index.html">Home</a><span>›</span>Blog</div>
+                    <h1>Wine Stories</h1>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2 class="section-title reveal">Latest Articles</h2>
+                <div class="blog-grid">
+                    <article class="blog-card reveal">
+                        <div class="blog-card-img-wrap"><img class="blog-card-img"
+                                src="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=600&q=70"
+                                alt="Art of Wine Pairing" loading="lazy" /></div>
+                        <div class="blog-card-body">
+                            <div class="blog-meta"><span class="blog-category">Pairing Guide</span><span>📅 Feb 10,
+                                    2026</span></div>
+                            <h3>The Art of Wine &amp; Food Pairing</h3>
+                            <p>Master the fundamentals of matching wine varietals with cuisine — from classic Bordeaux
+                                and lamb to unexpected pairings like Riesling with Thai food.</p>
+                            <a href="#" class="blog-read-more">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal reveal-delay-1">
+                        <div class="blog-card-img-wrap"><img class="blog-card-img"
+                                src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=600&q=70"
+                                alt="Champagne Guide" loading="lazy" /></div>
+                        <div class="blog-card-body">
+                            <div class="blog-meta"><span class="blog-category">Champagne</span><span>📅 Jan 28,
+                                    2026</span></div>
+                            <h3>Your Essential Guide to Grand Cru Champagne</h3>
+                            <p>Not all Champagne is created equal. Explore the difference between Non-Vintage, Vintage,
+                                and Prestige Cuvée — and why terroir matters even in bubbles.</p>
+                            <a href="#" class="blog-read-more">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal reveal-delay-2">
+                        <div class="blog-card-img-wrap"><img class="blog-card-img" src="../assets/images/wine.webp"
+                                alt="Tuscany Harvest" loading="lazy" /></div>
+                        <div class="blog-card-body">
+                            <div class="blog-meta"><span class="blog-category">Destination</span><span>📅 Jan 15,
+                                    2026</span></div>
+                            <h3>Harvest Season in Tuscany: A Sommelier's Diary</h3>
+                            <p>James Laurent takes us through the magical chaos of harvest time at a Chianti estate —
+                                from early morning grape picking to evening barrel tastings.</p>
+                            <a href="#" class="blog-read-more">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal">
+                        <div class="blog-card-img-wrap"><img class="blog-card-img"
+                                src="../assets/images/high-end+whiskey+tastings.webp" alt="Natural Wine"
+                                loading="lazy" /></div>
+                        <div class="blog-card-body">
+                            <div class="blog-meta"><span class="blog-category">Trends</span><span>📅 Dec 22, 2025</span>
+                            </div>
+                            <h3>Natural Wine: Myth, Magic, or Both?</h3>
+                            <p>The natural wine movement has divided opinion. We taste through both camps and ask: does
+                                intervention really change what's in your glass?</p>
+                            <a href="#" class="blog-read-more">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal reveal-delay-1">
+                        <div class="blog-card-img-wrap"><img class="blog-card-img" src="../assets/images/place.webp"
+                                alt="Bordeaux Vintage 2020" loading="lazy" /></div>
+                        <div class="blog-card-body">
+                            <div class="blog-meta"><span class="blog-category">Vintage</span><span>📅 Dec 5, 2025</span>
+                            </div>
+                            <h3>Bordeaux 2020: A Once-in-a-Generation Vintage?</h3>
+                            <p>Critics are already calling 2020 one of Bordeaux's greatest ever harvests. We explore
+                                what makes this vintage so exceptional and how to invest wisely.</p>
+                            <a href="#" class="blog-read-more">Read More →</a>
+                        </div>
+                    </article>
+                    <article class="blog-card reveal reveal-delay-2">
+                        <div class="blog-card-img-wrap"><img class="blog-card-img"
+                                src="https://images.unsplash.com/photo-1438565434616-3ef039228b15?w=600&q=70"
+                                alt="Building a wine cellar" loading="lazy" /></div>
+                        <div class="blog-card-body">
+                            <div class="blog-meta"><span class="blog-category">Cellar Guide</span><span>📅 Nov 18,
+                                    2025</span></div>
+                            <h3>How to Start Your Home Wine Collection</h3>
+                            <p>Expert advice from Elena Marchetti on building a personal wine cellar — from storage
+                                conditions and temperature to curating a portfolio of great value.</p>
+                            <a href="#" class="blog-read-more">Read More →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo-wrap">
+                        <a href="../index.html">
+                            <svg width="36" height="36" viewBox="0 0 44 44" fill="none" aria-hidden="true">
+                                <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5" />
+                                <path d="M22 8C22 8 14 16 14 23a8 8 0 0016 0c0-7-8-15-8-15z" fill="#8B1A1A"
+                                    stroke="#C9A84C" />
+                                <rect x="20.5" y="31" width="3" height="5" rx="1" fill="#C9A84C" />
+                                <rect x="17" y="36" width="10" height="1.5" rx="0.75" fill="#C9A84C" />
+                            </svg>
+                            <div>
+                                <div class="logo-name"
+                                    style="font-family:var(--font-serif);font-size:1.1rem;color:var(--color-gold);font-weight:700;">
+                                    Boutique
+                                </div>
+                                <div class="logo-sub"
+                                    style="font-size:0.6rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-secondary);">
+                                    Wine Events</div>
+                            </div>
+                        </a>
+                    </div>
+                    <p>Crafting extraordinary wine experiences for discerning palates since 2009. Every event is an
+                        invitation to
+                        explore, savour, and celebrate.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook">f</a>
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="Twitter">𝕏</a>
+                        <a href="#" aria-label="YouTube">▶</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="events.html">Upcoming Events</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog &amp; News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Account</h4>
+                    <ul>
+                        <li><a href="login.html">Login</a></li>
+                        <li><a href="login.html#register">Register</a></li>
+                        <li><a href="dashboard/dashboard.html">My Dashboard</a></li>
+                        <li><a href="dashboard/bookings.html">My Bookings</a></li>
+                        <li><a href="dashboard/admin.html">Admin Panel</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Follow Us</h4>
+                    <ul>
+                        <li><a href="#">@BoutiqueWineEvents</a></li>
+                        <li><a href="#">Instagram Stories</a></li>
+                        <li><a href="#">YouTube Channel</a></li>
+                        <li><a href="#">Wine Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <span>&copy; 2026 Boutique Wine Events. All rights reserved.</span>
+                <span>Privacy Policy · Terms of Service</span>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/js/main.js"></script>
+</body>
+
+</html>

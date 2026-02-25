@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard – Boutique Wine Events</title>
+    <meta name="description" content="Your Boutique Wine Events client dashboard." />
+    <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <link rel="stylesheet" href="../assets/css/dark-mode.css" />
+    <link rel="stylesheet" href="../assets/css/dashboard.css" />
+    <style>
+        .stat-bg-1 {
+            background-image: url('https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=400&q=60');
+        }
+
+        .stat-bg-2 {
+            background-image: url('https://images.unsplash.com/photo-1474722883778-792e7990302f?w=400&q=60');
+        }
+
+        .stat-bg-3 {
+            background-image: url('https://images.unsplash.com/photo-1506377247377-2a35ed16c4e1?w=400&q=60');
+        }
+
+        .stat-bg-4 {
+            background-image: url('https://images.unsplash.com/photo-1560888002-b8d24c30f8dc?w=400&q=60');
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dashboard-layout">
+
+        <!-- SIDEBAR OVERLAY (mobile) -->
+        <div id="sidebar-overlay" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:99;"
+            onclick="document.getElementById('sidebar').classList.remove('open');this.style.display='none';"></div>
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar" id="sidebar" aria-label="Dashboard navigation">
+            <div class="sidebar-header">
+                <a href="../index.html">
+                    <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
+                        <circle cx="22" cy="22" r="21" stroke="#C9A84C" stroke-width="1.5" />
+                        <path d="M22 8C22 8 14 16 14 23a8 8 0 0016 0c0-7-8-15-8-15z" fill="#8B1A1A" stroke="#C9A84C"
+                            stroke-width="1" />
+                        <rect x="20.5" y="31" width="3" height="5" rx="1" fill="#C9A84C" />
+                        <rect x="17" y="36" width="10" height="1.5" rx="0.75" fill="#C9A84C" />
+                    </svg>
+                    <div>
+                        <div class="sidebar-logo-name">Boutique</div>
+                        <div class="sidebar-logo-sub">Wine Events</div>
+                    </div>
+            </div>
+
+            <div class="sidebar-user">
+                <div class="sidebar-user-avatar">J</div>
+                <div>
+                    <div class="sidebar-user-name">James Doe</div>
+                    <div class="sidebar-user-role">Member since 2024</div>
+                </div>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Dashboard sections">
+                <div class="sidebar-nav-section">Main</div>
+                <a href="dashboard.html" class="active" id="nav-dashboard">
+                    <span class="nav-icon">🏠</span> Dashboard
+                </a>
+                <a href="inbox.html" id="nav-inbox">
+                    <span class="nav-icon">📨</span> My Inbox
+                    <span class="nav-badge">3</span>
+                </a>
+                <a href="saved.html" id="nav-saved">
+                    <span class="nav-icon">🔖</span> Saved Events
+                </a>
+                <a href="bookings.html" id="nav-bookings">
+                    <span class="nav-icon">📅</span> Booking History
+                </a>
+                <div class="sidebar-nav-section">Account</div>
+                <a href="tickets.html" id="nav-tickets">
+                    <span class="nav-icon">🎟️</span> Tickets
+                </a>
+                <a href="profile.html" id="nav-profile">
+                    <span class="nav-icon">👤</span> Profile
+                </a>
+                <a href="settings.html" id="nav-settings">
+                    <span class="nav-icon">⚙️</span> Settings
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <a href="../index.html">Logout</a>
+            </div>
+        </aside>
+
+        <!-- MAIN -->
+        <div class="dashboard-main">
+            <!-- Topbar -->
+            <div class="dashboard-topbar">
+                <div style="display:flex;align-items:center;gap:var(--space-md);">
+                    <button class="sidebar-toggle-btn" id="sidebar-toggle" aria-label="Open sidebar">☰</button>
+                    <span class="topbar-title">Dashboard</span>
+                </div>
+                <div class="topbar-actions">
+                    <button class="topbar-icon-btn" aria-label="Notifications">🔔</button>
+                    <button id="theme-toggle" class="topbar-icon-btn" aria-label="Toggle theme"><span
+                            class="theme-icon-moon">🌙</span><span class="theme-icon-sun">☀️</span></button>
+                    <a href="../pages/login.html" class="btn btn-outline btn-sm">Sign Out</a>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="dashboard-content">
+
+                <!-- Welcome -->
+                <div style="margin-bottom:var(--space-xl);" class="reveal">
+                    <h2 style="font-style:italic;">Welcome Back, James 🥂</h2>
+                    <p>Here's an overview of your wine journey.</p>
+                </div>
+
+                <!-- Stats -->
+                <div class="stats-grid reveal">
+                    <div class="stat-widget">
+                        <div class="stat-widget-bg stat-bg-1"></div>
+                        <div class="stat-widget-overlay"></div>
+                        <div class="stat-widget-content">
+                            <div class="stat-widget-label">Champagne Consumed</div>
+                            <div class="stat-widget-value" data-count="24">0</div>
+                        </div>
+                    </div>
+                    <div class="stat-widget">
+                        <div class="stat-widget-bg stat-bg-2"></div>
+                        <div class="stat-widget-overlay"></div>
+                        <div class="stat-widget-content">
+                            <div class="stat-widget-label">Themed Evenings</div>
+                            <div class="stat-widget-value" data-count="7">0</div>
+                        </div>
+                    </div>
+                    <div class="stat-widget">
+                        <div class="stat-widget-bg stat-bg-3"></div>
+                        <div class="stat-widget-overlay"></div>
+                        <div class="stat-widget-content">
+                            <div class="stat-widget-label">Upcoming Events</div>
+                            <div class="stat-widget-value" data-count="2">0</div>
+                        </div>
+                    </div>
+                    <div class="stat-widget">
+                        <div class="stat-widget-bg stat-bg-4"></div>
+                        <div class="stat-widget-overlay"></div>
+                        <div class="stat-widget-content">
+                            <div class="stat-widget-label">Memories</div>
+                            <div class="stat-widget-value" data-count="31">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upcoming Events -->
+                <div class="dashboard-section reveal">
+                    <div class="dashboard-section-header">
+                        <h3 class="dashboard-section-title">My Upcoming Events</h3>
+                        <a href="bookings.html" class="btn btn-outline btn-sm">View All</a>
+                    </div>
+
+                    <div class="upcoming-event-item">
+                        <img class="upcoming-event-img"
+                            src="https://images.unsplash.com/photo-1547595628-c61a29f496f0?w=200&q=70"
+                            alt="Nasabi Wine Affair" />
+                        <div class="upcoming-event-info">
+                            <h4>Nasabi Wine Affair</h4>
+                            <div class="upcoming-event-meta">
+                                <span>📅 Mar 15, 2026</span>
+                                <span>📍 Kensington, London</span>
+                            </div>
+                        </div>
+                        <a href="../pages/events.html" class="btn btn-outline-gold btn-sm">View Details →</a>
+                    </div>
+
+                    <div class="upcoming-event-item">
+                        <img class="upcoming-event-img"
+                            src="https://images.unsplash.com/photo-1474722883778-792e7990302f?w=200&q=70"
+                            alt="Napa Reserve Tasting" />
+                        <div class="upcoming-event-info">
+                            <h4>Napa Valley Reserve Tasting</h4>
+                            <div class="upcoming-event-meta">
+                                <span>📅 Apr 2, 2026</span>
+                                <span>📍 Napa, California</span>
+                            </div>
+                        </div>
+                        <a href="../pages/events.html" class="btn btn-outline-gold btn-sm">View Details →</a>
+                    </div>
+                </div>
+
+                <!-- Booking History -->
+                <div class="dashboard-section reveal">
+                    <div class="dashboard-section-header">
+                        <h3 class="dashboard-section-title">Booking History</h3>
+                        <a href="bookings.html" class="btn btn-outline btn-sm">Full History</a>
+                    </div>
+
+                    <div class="card">
+                        <div class="booking-item">
+                            <div class="booking-item-info">
+                                <h4>Napa Valley Reserve Tasting</h4>
+                                <div class="booking-item-date">Apr 1, 2026</div>
+                            </div>
+                            <div class="booking-item-actions">
+                                <span class="badge badge-pending">Upcoming</span>
+                                <a href="#" class="btn btn-outline btn-sm">View Invoice</a>
+                            </div>
+                        </div>
+                        <div class="booking-item">
+                            <div class="booking-item-info">
+                                <h4>Champagne &amp; Oyster High Tea</h4>
+                                <div class="booking-item-date">Jan 20, 2026</div>
+                            </div>
+                            <div class="booking-item-actions">
+                                <span class="badge badge-success">Attended</span>
+                                <a href="#" class="btn btn-outline btn-sm">View Invoice</a>
+                            </div>
+                        </div>
+                        <div class="booking-item">
+                            <div class="booking-item-info">
+                                <h4>Tuscan Wine Dinner</h4>
+                                <div class="booking-item-date">Dec 12, 2025</div>
+                            </div>
+                            <div class="booking-item-actions">
+                                <span class="badge badge-success">Attended</span>
+                                <a href="#" class="btn btn-outline btn-sm">View Invoice</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Support Banner -->
+                <div class="support-banner reveal">
+                    <div class="support-banner-text">
+                        <h4>Need Assistance? Contact Support</h4>
+                        <p>Our team is available Mon–Fri, 9am – 6pm.</p>
+                    </div>
+                    <a href="../pages/contact.html" class="btn btn-gold">Contact Us →</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Inline sidebar overlay fix for mobile
+        const sidebarToggleBtn = document.getElementById('sidebar-toggle');
+        const sidebarMenu = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebar-overlay');
+        if (sidebarToggleBtn) {
+            sidebarToggleBtn.addEventListener('click', () => {
+                sidebarMenu.classList.toggle('open');
+                overlay.style.display = sidebarMenu.classList.contains('open') ? 'block' : 'none';
+            });
+        }
+    </script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+
+</html>
