@@ -487,6 +487,118 @@
     }
 }
 
+/* ---- LIGHT MODE DASHBOARD CONTRAST ---- */
+.light-mode .dashboard-main {
+    background: #FAFAFA;
+}
+
+.light-mode .sidebar {
+    background: #FFFFFF;
+    border-right-color: rgba(139, 26, 26, 0.12);
+}
+
+.light-mode .sidebar-logo-sub {
+    color: #5A3520;
+}
+
+.light-mode .sidebar-nav a {
+    color: #3B2010;
+}
+
+.light-mode .sidebar-nav a:hover {
+    color: #1A0A0A;
+    background: rgba(139, 26, 26, 0.05);
+}
+
+.light-mode .sidebar-nav a.active {
+    color: var(--color-primary);
+    background: rgba(139, 26, 26, 0.08);
+    border-left-color: var(--color-primary);
+}
+
+.light-mode .sidebar-nav-section {
+    color: #6B4A30;
+}
+
+.light-mode .sidebar-footer a {
+    color: #6B4A30;
+}
+
+.light-mode .sidebar-user-name {
+    color: #1A0A0A;
+}
+
+.light-mode .sidebar-user-role {
+    color: #6B4A30;
+}
+
+.light-mode .dashboard-topbar {
+    background: #FFFFFF;
+    border-bottom-color: rgba(139, 26, 26, 0.12);
+}
+
+.light-mode .topbar-title {
+    color: #1A0A0A;
+}
+
+.light-mode .topbar-icon-btn {
+    color: #3B2010;
+    background: #F5F0EB;
+    border-color: rgba(139, 26, 26, 0.15);
+}
+
+.light-mode .dashboard-content h2,
+.light-mode .dashboard-content h3,
+.light-mode .dashboard-content h4 {
+    color: #1A0A0A;
+}
+
+.light-mode .dashboard-content > div > p {
+    color: #3B2010;
+}
+
+.light-mode .dashboard-section-title {
+    color: #1A0A0A;
+}
+
+.light-mode .upcoming-event-item {
+    background: #FFFFFF;
+    border-color: rgba(139, 26, 26, 0.12);
+}
+
+.light-mode .upcoming-event-info h4 {
+    color: #1A0A0A;
+}
+
+.light-mode .upcoming-event-meta {
+    color: #6B4A30;
+}
+
+.light-mode .booking-item {
+    border-bottom-color: rgba(139, 26, 26, 0.1);
+}
+
+.light-mode .booking-item-info h4 {
+    color: #1A0A0A;
+}
+
+.light-mode .booking-item-date {
+    color: #6B4A30;
+}
+
+.light-mode .card {
+    background: #FFFFFF;
+    border-color: rgba(139, 26, 26, 0.12);
+}
+
+.light-mode .sidebar-header {
+    border-bottom-color: rgba(139, 26, 26, 0.12);
+}
+
+.light-mode .sidebar-user {
+    border-bottom-color: rgba(139, 26, 26, 0.12);
+}
+
 /* ---- RTL SUPPORT ---- */
 [dir="rtl"] .sidebar {
     left: auto;

@@ -101,13 +101,33 @@
 .light-mode .section-subtitle,
 .light-mode .text-secondary,
 .light-mode .footer-brand p {
-    color: #4A2E18;
+    color: #3B2010;
 }
 
 .light-mode .event-card-meta,
 .light-mode .text-muted,
 .light-mode .footer-bottom {
-    color: #5A3520;
+    color: #6B4A30;
+}
+
+/* Light mode section backgrounds for visual hierarchy */
+.light-mode section[style*="background:var(--bg-alt)"],
+.light-mode section[style*="background: var(--bg-alt)"] {
+    background: #F5F0EB !important;
+}
+
+/* Light mode body background */
+.light-mode body {
+    background-color: #FFFFFF;
+}
+
+/* Light mode cards in section-alt areas */
+.light-mode .team-card,
+.light-mode .why-us-card,
+.light-mode .testimonial-card {
+    background: #FFFFFF;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    border-color: rgba(139, 26, 26, 0.1);
 }
 
 /* Theme Toggle Icon */

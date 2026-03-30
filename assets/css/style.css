@@ -69,14 +69,14 @@
 
 /* Light mode overrides */
 .light-mode {
-  --bg: #F5EDE0;
-  --bg-alt: #EAD9C6;
+  --bg: #FFFFFF;
+  --bg-alt: #F5F0EB;
   --bg-surface: #FFFFFF;
-  --bg-surface-2: #F0E4D4;
-  --bg-overlay: rgba(245, 237, 224, 0.85);
+  --bg-surface-2: #F0EBE4;
+  --bg-overlay: rgba(255, 255, 255, 0.9);
   --text-primary: #1A0A0A;
-  --text-secondary: #5C3A2A;
-  --text-muted: #8B6050;
+  --text-secondary: #3B2010;
+  --text-muted: #6B4A30;
   --border-color: rgba(139, 26, 26, 0.15);
   --border-color-hover: rgba(139, 26, 26, 0.4);
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -262,7 +262,8 @@ section {
 .navbar-nav {
   display: flex;
   align-items: center;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
+  flex-shrink: 0;
 }
 
 .navbar-nav a {
@@ -272,6 +273,7 @@ section {
   letter-spacing: 0.04em;
   transition: color var(--transition-fast);
   position: relative;
+  white-space: nowrap;
 }
 
 .navbar-nav a::after {
@@ -301,6 +303,7 @@ section {
   display: flex;
   align-items: center;
   gap: var(--space-md);
+  flex-shrink: 0;
 }
 
 .btn-theme-toggle {
@@ -568,6 +571,9 @@ section {
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all var(--transition-base);
+  width: 250px;
+  display: flex;
+  flex-direction: column;
 }
 
 .event-card:hover {
@@ -608,6 +614,9 @@ section {
 
 .event-card-body {
   padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .event-card-meta {
@@ -634,9 +643,10 @@ section {
 .event-card p {
   font-size: 0.9rem;
   color: var(--text-secondary);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
   -webkit-box-orient: vertical;
   overflow: hidden;
+  flex: 1;
 }
 
 /* Featured Events Carousel */
@@ -1163,8 +1173,8 @@ textarea.form-control {
   }
 }
 
-/* Fix tablet navbar: hide nav and action buttons below 900px */
-@media (max-width: 900px) {
+/* Fix tablet navbar: hide nav and action buttons below 1024px */
+@media (max-width: 1024px) {
   :root {
     --navbar-height: 68px;
   }
@@ -1203,14 +1213,16 @@ textarea.form-control {
   .newsletter-form {
     max-width: 100%;
     min-width: unset;
+    flex-direction: column;
   }
 
-  .carousel-btn-prev {
-    left: 0;
+  .newsletter-form button {
+    width: 100%;
+    justify-content: center;
   }
 
-  .carousel-btn-next {
-    right: 0;
+  .carousel-btn {
+    display: none;
   }
 
   section {
@@ -1254,7 +1266,7 @@ textarea.form-control {
   }
 
   .hero {
-    min-height: 85vh;
+    height:100vh;
   }
 
   .btn-lg {

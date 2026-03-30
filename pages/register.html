@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign In – Boutique Wine Events</title>
+    <title>Create Account – Boutique Wine Events</title>
     <meta name="description"
-        content="Sign in to your Boutique Wine Events account to access exclusive events and your personal dashboard." />
+        content="Create your Boutique Wine Events account to book exclusive wine tasting events and access your personal dashboard." />
     <link rel="icon" type="image/svg+xml" href="../assets/images/favicon.svg" />
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/dark-mode.css" />
@@ -34,7 +34,7 @@
             position: relative;
             z-index: 2;
             width: 100%;
-            max-width: 460px;
+            max-width: 500px;
             background: var(--bg-surface);
             border: 1px solid var(--border-color);
             border-radius: var(--radius-xl);
@@ -108,10 +108,6 @@
             background: var(--bg-surface-2);
         }
 
-        .social-btn svg {
-            flex-shrink: 0;
-        }
-
         .auth-divider {
             display: flex;
             align-items: center;
@@ -131,16 +127,6 @@
             font-size: 0.8rem;
             color: var(--text-muted);
             white-space: nowrap;
-        }
-
-        .forgot-link {
-            font-size: 0.82rem;
-            color: var(--color-gold);
-            float: right;
-        }
-
-        .forgot-link:hover {
-            text-decoration: underline;
         }
 
         .auth-bottom {
@@ -192,6 +178,12 @@
             height: 18px;
         }
 
+        .name-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-md);
+        }
+
         @media(max-width:480px) {
             .auth-card {
                 padding: var(--space-lg);
@@ -201,9 +193,12 @@
             .auth-page {
                 padding: var(--space-md);
             }
+
+            .name-grid {
+                grid-template-columns: 1fr;
+            }
         }
 
-        /* Make logo clickable */
         .auth-logo a {
             text-decoration: none;
             display: block;
@@ -217,7 +212,6 @@
 </head>
 
 <body>
-    <!-- No navbar on auth pages -->
     <main class="auth-page">
         <div class="auth-card">
             <div class="auth-logo">
@@ -235,87 +229,104 @@
                 </a>
             </div>
 
-            <h1 class="auth-heading">Welcome Back</h1>
-            <p class="auth-subheading">Sign in to access your exclusive wine experiences</p>
+            <h1 class="auth-heading">Create Account</h1>
+            <p class="auth-subheading">Join our community of wine enthusiasts</p>
 
-            <!-- Social Sign In -->
+            <!-- Social Sign Up -->
             <div class="social-login">
-                <!-- Google -->
-                <button class="social-btn" id="google-signin">
+                <button class="social-btn" id="google-signup">
                     <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                         <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
                         <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
                         <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
                         <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
                     </svg>
-                    Continue with Google
+                    Sign up with Google
                 </button>
-                <!-- Facebook -->
-                <button class="social-btn" id="facebook-signin">
+                <button class="social-btn" id="facebook-signup">
                     <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                         <path fill="#1877F2" d="M44 24C44 12.954 35.046 4 24 4S4 12.954 4 24c0 9.983 7.314 18.263 16.875 19.757V29.734h-5.078V24h5.078v-4.412c0-5.011 2.986-7.781 7.554-7.781 2.189 0 4.479.39 4.479.39v4.922h-2.522c-2.486 0-3.261 1.543-3.261 3.126V24h5.547l-.887 5.734h-4.66v14.023C36.686 42.263 44 33.983 44 24z"/>
                         <path fill="#fff" d="M31.785 29.734l.887-5.734h-5.547v-3.755c0-1.583.775-3.126 3.261-3.126h2.522v-4.922s-2.29-.39-4.479-.39c-4.568 0-7.554 2.77-7.554 7.781V24h-5.078v5.734h5.078v14.023a19.186 19.186 0 005.875 0V29.734h4.035z"/>
                     </svg>
-                    Continue with Facebook
+                    Sign up with Facebook
                 </button>
-                <!-- Apple -->
-                <button class="social-btn" id="apple-signin">
+                <button class="social-btn" id="apple-signup">
                     <svg width="20" height="20" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
                         <path fill="currentColor" d="M35.09 25.27c-.04-4.28 3.48-6.34 3.64-6.44-1.98-2.9-5.07-3.3-6.17-3.35-2.63-.27-5.14 1.55-6.48 1.55-1.33 0-3.39-1.51-5.58-1.47-2.86.04-5.51 1.66-6.98 4.21-2.98 5.18-.76 12.85 2.14 17.05 1.42 2.06 3.11 4.38 5.33 4.3 2.14-.09 2.95-1.38 5.54-1.38 2.59 0 3.33 1.38 5.6 1.33 2.31-.04 3.78-2.1 5.19-4.16 1.63-2.38 2.31-4.69 2.35-4.81-.05-.02-4.53-1.74-4.58-6.83zM30.89 12.7c1.19-1.44 1.99-3.44 1.77-5.44-1.71.07-3.77 1.14-4.99 2.55-1.1 1.26-2.06 3.29-1.8 5.23 1.9.15 3.84-.97 5.02-2.34z"/>
                     </svg>
-                    Continue with Apple
+                    Sign up with Apple
                 </button>
             </div>
 
-            <div class="auth-divider"><span>or continue with email</span></div>
+            <div class="auth-divider"><span>or register with email</span></div>
 
-            <form id="login-form" novalidate>
-                <div class="form-group">
-                    <label for="login-email">Email Address</label>
-                    <input type="email" id="login-email" class="form-control" placeholder="you@example.com"
-                        required />
+            <form id="register-form" novalidate>
+                <div class="name-grid">
+                    <div class="form-group"><label for="reg-first">First Name</label><input type="text"
+                            id="reg-first" class="form-control" placeholder="Jane" required /></div>
+                    <div class="form-group"><label for="reg-last">Last Name</label><input type="text" id="reg-last"
+                            class="form-control" placeholder="Doe" required /></div>
                 </div>
+                <div class="form-group"><label for="reg-email">Email Address</label><input type="email"
+                        id="reg-email" class="form-control" placeholder="you@example.com" required /></div>
                 <div class="form-group">
-                    <label for="login-password">Password <a href="#" class="forgot-link">Forgot?</a></label>
+                    <label for="reg-password">Password</label>
                     <div class="password-wrapper">
-                        <input type="password" id="login-password" class="form-control" placeholder="••••••••"
+                        <input type="password" id="reg-password" class="form-control" placeholder="Min. 8 characters"
                             required />
-                        <button type="button" class="btn-eye" id="toggle-login-pw" aria-label="Toggle password visibility">
-                            <!-- Eye open icon -->
-                            <svg id="eye-open-login" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <button type="button" class="btn-eye" id="toggle-reg-pw" aria-label="Toggle password visibility">
+                            <svg id="eye-open-reg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                             </svg>
-                            <!-- Eye closed icon -->
-                            <svg id="eye-closed-login" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:none;">
+                            <svg id="eye-closed-reg" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:none;">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
                             </svg>
                         </button>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary"
-                    style="width:100%;justify-content:center;margin-top:var(--space-sm);"
-                    onclick="window.location='../dashboard/dashboard.html';return false;">Sign In</button>
+                <div class="form-group">
+                    <label for="reg-confirm">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input type="password" id="reg-confirm" class="form-control" placeholder="Repeat password"
+                            required />
+                        <button type="button" class="btn-eye" id="toggle-reg-confirm" aria-label="Toggle confirm password visibility">
+                            <svg id="eye-open-confirm" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <svg id="eye-closed-confirm" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" style="display:none;">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;"
+                    onclick="window.location='../dashboard/dashboard.html';return false;">Create Account</button>
             </form>
 
-            <div class="auth-bottom">Don't have an account? <a href="register.html">Create one now</a></div>
+            <div class="auth-bottom">Already have an account? <a href="login.html">Sign in here</a></div>
         </div>
     </main>
 
     <script>
-        // Password visibility toggle
-        const toggleBtn = document.getElementById('toggle-login-pw');
-        const pwInput = document.getElementById('login-password');
-        const eyeOpen = document.getElementById('eye-open-login');
-        const eyeClosed = document.getElementById('eye-closed-login');
-        if (toggleBtn) {
-            toggleBtn.addEventListener('click', () => {
-                const isPassword = pwInput.type === 'password';
-                pwInput.type = isPassword ? 'text' : 'password';
-                eyeOpen.style.display = isPassword ? 'none' : 'block';
-                eyeClosed.style.display = isPassword ? 'block' : 'none';
-            });
+        // Password toggles
+        function setupEyeToggle(btnId, inputId, openId, closedId) {
+            const btn = document.getElementById(btnId);
+            const input = document.getElementById(inputId);
+            const eyeOpen = document.getElementById(openId);
+            const eyeClosed = document.getElementById(closedId);
+            if (btn) {
+                btn.addEventListener('click', () => {
+                    const isPassword = input.type === 'password';
+                    input.type = isPassword ? 'text' : 'password';
+                    eyeOpen.style.display = isPassword ? 'none' : 'block';
+                    eyeClosed.style.display = isPassword ? 'block' : 'none';
+                });
+            }
         }
+        setupEyeToggle('toggle-reg-pw', 'reg-password', 'eye-open-reg', 'eye-closed-reg');
+        setupEyeToggle('toggle-reg-confirm', 'reg-confirm', 'eye-open-confirm', 'eye-closed-confirm');
     </script>
     <script src="../assets/js/main.js"></script>
 </body>
