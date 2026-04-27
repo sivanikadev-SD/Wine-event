@@ -267,7 +267,7 @@
 .stat-widget-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(26, 10, 10, 0.85), rgba(90, 20, 20, 0.5));
+    background: linear-gradient(to top, rgba(26, 10, 10, 0.9), rgba(60, 15, 15, 0.4));
 }
 
 .stat-widget-content {
@@ -280,7 +280,7 @@
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--text-secondary);
+    color: rgba(255, 255, 255, 0.85); /* Fixed light color for contrast */
     margin-bottom: 0.25rem;
 }
 
@@ -288,7 +288,7 @@
     font-family: var(--font-serif);
     font-size: 2.5rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: #FFFFFF; /* Fixed white for contrast */
     line-height: 1;
 }
 
@@ -397,23 +397,26 @@
     align-items: center;
     justify-content: space-between;
     padding: var(--space-lg) var(--space-xl);
-    background: linear-gradient(135deg, var(--color-primary-dark), var(--bg-alt));
+    background: linear-gradient(135deg, var(--color-primary-dark), #4A0808); /* Darker background for light text */
     border: 1px solid var(--border-color);
     border-radius: var(--radius-lg);
     margin-top: var(--space-xl);
     flex-wrap: wrap;
     gap: var(--space-md);
+    color: #FFFFFF; /* Ensure text is light */
 }
 
 .support-banner-text h4 {
     font-family: var(--font-serif);
     font-size: 1.2rem;
     margin-bottom: 0.2rem;
+    color: #FFFFFF; /* Fixed light color */
 }
 
 .support-banner-text p {
     font-size: 0.88rem;
     margin: 0;
+    color: rgba(255, 255, 255, 0.9); /* Fixed light color */
 }
 
 /* ---- RESPONSIVE ---- */
